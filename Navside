@@ -1,0 +1,17 @@
+<div class="uk-panel uk-panel-box uk-width-1-4">
+<h3 class="uk-panel-title">[[++site_name]]</h3>
+    [[!pdoMenu? 
+    &lastClass=`0` 
+    &firstClass=`0` 
+    &hereClass=`uk-active` 
+    &outerClass=`uk-nav uk-nav-parent-icon uk-nav-side` 
+    &parentClass=`uk-parent`
+    &startId=`0`
+    &level=`2`
+    &tplOuter=`@INLINE <ul[[+classes]] data-uk-nav="{multiple:true}">[[+wrapper]]</ul>`
+    &tplParentRow=`@INLINE <li[[+classes]]><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
+    &tplParentRowActive=`@INLINE <li[[+classes]]><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
+    &tplInner=`@INLINE <ul class="uk-nav-sub">[[+wrapper]]</ul>`
+    ]]
+</div>    
+</div>
