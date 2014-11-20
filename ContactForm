@@ -1,0 +1,38 @@
+[[!FormIt?
+&preHooks=`coolcaptcha_fihook`
+&hooks=`coolcaptcha_fihook,email,FormSave,redirect`
+&validate=`form_name:required:minLength=^2^,form_contacts:required:minLength=^10^,form_message:required:minLength=^10^`
+&emailTo=`elena-dsa@yandex.ru`
+&emailSubject=`Сообщение`
+&emailTpl=`formEmail`
+&fsFormFields=`form_name,form_contacts,form_message` 
+&redirectTo=`6`
+&submitVar=`submit`
+]]
+
+<div class="uk-placeholder uk-width-large-3-4">
+<form class="uk-form uk-form-horizontal" id="contactForm" method="post" action="[[~[[*id]]]]">
+    <fieldset>
+        <legend>Отправить сообщение</legend>
+        <div class="uk-form-row">
+		<input type="text" name="form_name" placeholder="Имя" class=" uk-width-1-1 uk-form-large[[!+fi.error.form_name:notempty=` uk-form-danger`]]" value="[[!+fi.form_name]]" >
+		[[!+fi.error.form_name:notempty=`<p class="uk-text-danger uk-text-bold">Поле должно содержать не менее 2 символов</p>`]]
+		</div>
+
+        <div class="uk-form-row">
+		<input type="text" name="form_contacts" placeholder="Контакты" class=" uk-width-1-1 uk-form-large[[!+fi.error.form_contacts:notempty=` uk-form-danger`]]" value="[[!+fi.form_contacts]]" >
+		</div>
+		[[!+fi.error.form_contacts:notempty=`<p class="uk-text-danger uk-text-bold">Поле должно содержать не менее 10 символов</p>`]]
+		<div class="uk-form-row">
+		<textarea  name="form_message" cols="30" rows="6" placeholder="Сообщение" class=" uk-width-1-1 uk-form-large[[!+fi.error.form_message:notempty=` uk-form-danger`]]">[[!+fi.form_message]]</textarea>
+		[[!+fi.error.form_message:notempty=`<p class="uk-text-danger uk-text-bold">Поле должно содержать не менее 10 символов</p>`]]
+		</div>
+
+		<div class="uk-form-row">
+		<div class="uk-width-1-1">[[!+fi.coolcaptcha]][[!+fi.error.captcha:notempty=`<p class="uk-text-danger uk-text-bold">Не верный код подтверждения</p>`]]</div>
+		</div>
+		<div class="uk-form-row"><div class="uk-width-1-1"><input type="text" name="captcha" id="captcha" placeholder="Защитный код" class=" uk-form-large[[!+fi.error.captcha:notempty=` uk-form-danger`]]" style="width:200px;"></div></div>
+		<div class="uk-form-row"><input class="uk-button uk-button-large uk-button-primary" name="submit" type="submit" value="Отправить сообщение &raquo;"></div>
+    </fieldset>
+</form>
+</div>
