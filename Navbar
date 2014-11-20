@@ -7,7 +7,7 @@
     &parentClass=`uk-parent`
     &level=`2` 
     &startId=`0` 
-    &tplParentRow=`@INLINE <li[[+classes]]><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
+    &tplParentRow=`@INLINE <li[[+classes]] data-uk-dropdown><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
     &tplParentRowActive=`@INLINE <li[[+classes]] data-uk-dropdown><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
     &tplInner=`@INLINE <div class="uk-dropdown uk-dropdown-navbar"><ul class="uk-nav uk-nav-navbar">[[+wrapper]]</ul></div>`
     ]]
