@@ -1,0 +1,23 @@
+<div class="uk-grid"  data-uk-margin data-uk-grid-match="{target:'.uk-thumbnail-caption'}">
+[[!pdoPage? 
+&element=`Gallery`
+&album=`1` 
+&thumbWidth=`220` 
+&thumbHeight=`150`
+&imageWidth=`800` 
+&imageHeight=`600`
+
+&limit=`24`
+&tplPageWrapper=`@INLINE <ul class="uk-pagination">[[+first]][[+prev]][[+pages]][[+next]][[+last]]</ul>`
+&tplPageActive=`@INLINE <li class="uk-active"><span>[[+pageNo]]</span></li>`
+&tplPageFirst=`@INLINE <li><a href="[[+href]]"><i class="uk-icon-angle-double-left"></i></a></li>`
+&tplPagePrev=`@INLINE <li><a href="[[+href]]"><i class="uk-icon-angle-left"></i></a></li>`
+&tplPageLast=`@INLINE <li><a href="[[+href]]"><i class="uk-icon-angle-double-right"></i></a></li>`
+&tplPageNext=`@INLINE <li><a href="[[+href]]"><i class="uk-icon-angle-right"></i></a></li>`
+&tplPageFirstEmpty=``
+&tplPageLastEmpty=``
+&tplPagePrevEmpty=``
+&tplPageNextEmpty=``
+]]
+</div>
+<div class="uk-width-1-1 uk-margin-top">[[!+page.nav]]</div>
