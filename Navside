@@ -1,4 +1,4 @@
-<div class="uk-panel uk-panel-box uk-width-1-4">
+<div class="uk-panel uk-panel-box uk-panel-header uk-width-1-4">
 <h3 class="uk-panel-title">[[++site_name]]</h3>
     [[!pdoMenu? 
     &lastClass=`0` 
