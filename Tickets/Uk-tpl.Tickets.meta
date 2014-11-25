@@ -1,0 +1,30 @@
+<div class="ticket-meta" data-id="[[+id]]">
+<p class="">
+    <i class="uk-icon-user"></i> [[+fullname]] | [[+date_ago]] | <a href="[[~[[+section.id]]]]" class="uk-link-muted"><i class="uk-icon-folder"></i> [[+section.pagetitle]]</a>
+    <span class="uk-align-right">
+        		<span class="ticket-rating[[+active]][[+inactive]]">
+        			<span class="vote plus[[+voted_plus]]" title="[[%ticket_like]]"><i class="uk-icon-thumbs-o-up"></i></span>
+        			[[+can_vote]][[+cant_vote]]
+        			<span class="vote minus[[+voted_minus]]" title="[[%ticket_dislike]]"><i class="uk-icon-thumbs-o-down"></i></span>
+        		</span>
+  |  <span class="ticket-star[[+can_star]]">[[+stared]][[+unstared]] <span class="ticket-star-count">[[+stars]]</span></span> | 
+    <i class="uk-icon-comments-o"></i> [[+comments]] [[+new_comments]] | <i class="uk-icon-eye"></i> [[+views]]</span><hr></p>
+</div>
+[[+has_files]]
+
+<!--tickets_can_vote <span class="vote rating" title="[[%ticket_refrain]]"><i class="uk-icon-minus"></i></span>-->
+<!--tickets_cant_vote <span class="rating[[+rating_positive]][[+rating_negative]]" title="[[%ticket_rating_total]] [[+rating_total]]: ↑[[+rating_plus]] [[%ticket_rating_and]] ↓[[+rating_minus]]">[[+rating]]</span>-->
+<!--tickets_active  active-->
+<!--tickets_inactive  inactive-->
+<!--tickets_voted_plus  voted-->
+<!--tickets_voted_minus  voted-->
+<!--tickets_rating_positive  positive-->
+<!--tickets_rating_negative  negative-->
+<!--tickets_has_files
+<ul class="ticket-files">
+	<strong>[[%ticket_uploaded_files]]:</strong>
+	[[+files]]
+</ul>-->
+<!--tickets_can_star  active-->
+<!--tickets_stared <i class="uk-icon-star stared star"></i>-->
+<!--tickets_unstared <i class="uk-icon-star unstared star"></i>-->
