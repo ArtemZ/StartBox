@@ -1,43 +1,18 @@
-<article class="uk-article" data-id="[[+id]]">
-    <a href="[[~[[+id]]]]"><h1 class="uk-article-title uk-link-muted">[[+pagetitle]]</h1></a>
+<article class="uk-article ticket-meta" data-id="[[+id]]">
+    <a href="[[~[[+id]]]]" class="uk-link-muted"><h1 class="uk-h2">[[+pagetitle]]</h1></a>
     <p class="uk-article-meta">
-    <i class="uk-icon-user"></i> <a href="">[[+fullname]]</a> | [[+date_ago]] | <a href=""><i class="uk-text-success uk-icon-thumbs-o-up"></i></a> <span class="uk-text-bold uk-text-success">+5</span> <a href=""><i class="uk-text-danger uk-icon-thumbs-o-down"></i></a> | <i class="uk-icon-comments-o"></i> <a href="">[[+comments]]  [[+new_comments]]</a> | <i class="uk-icon-star"></i> 5 | <i class="uk-icon-eye"></i> [[+views]]</p>
-    [[+introtext]]
+    <i class="uk-icon-user"></i> [[+fullname]] | [[+date_ago]] | <i class="uk-icon-folder"></i> <a href="[[~[[+section.id]]]]" class="uk-text-muted">[[+section.pagetitle]]</a>
+    <span class="uk-align-right">
+        		<span class="ticket-rating[[+active]][[+inactive]]">
+        			<span class="vote plus[[+voted_plus]]" title="[[%ticket_like]]"><i class="uk-icon-thumbs-o-up"></i></span>
+        			[[+can_vote]][[+cant_vote]]
+        			<span class="vote minus[[+voted_minus]]" title="[[%ticket_dislike]]"><i class="uk-icon-thumbs-o-down"></i></span>
+        		</span>
+  |  <span class="ticket-star[[+can_star]]">[[+stared]][[+unstared]] <span class="ticket-star-count">[[+stars]]</span></span> | 
+    <i class="uk-icon-comments-o"></i> [[+comments]] [[+new_comments]] | <i class="uk-icon-eye"></i> [[+views]]</span></p>
+    [[+introtext]]<br><a href="[[~[[+id]]]]#cut" class="uk-button uk-button-primary uk-button-small uk-align-right">[[%ticket_read_more]] <i class="uk-icon-chevron-circle-right"></i></a>
 </article>
-
-
-
-
-
-
-<div class="tickets-row">
-    <h3 class="title"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></h3>
-	<div class="content">
-		[[+introtext]]<br/>
-		<a href="[[~[[+id]]]]#cut" class="btn btn-default ticket-read-more">[[%ticket_read_more]]</a>
-	</div>
-	<div class="ticket-meta row" data-id="[[+id]]">
-		<span class="col-md-5">
-			<i class="glyphicon glyphicon-calendar"></i> [[+date_ago]]
-			&nbsp;&nbsp;
-			<i class="glyphicon glyphicon-user"></i> [[+fullname]]
-		</span>
-		<span class="col-md-2"><a href="[[~[[+section.id]]]]"><i class="glyphicon glyphicon-folder-open"></i> [[+section.pagetitle]]</a></span>
-		<span class="col-md-3">
-			<span class="ticket-star[[+can_star]]">[[+stared]][[+unstared]] <span class="ticket-star-count">[[+stars]]</span></span>
-			&nbsp;&nbsp;
-			<i class="glyphicon glyphicon-eye-open"></i> [[+views]]
-			&nbsp;&nbsp;
-			<i class="glyphicon glyphicon-comment"></i> [[+comments]]  [[+new_comments]]
-		</span>
-		<span class="col-md-2 pull-right ticket-rating[[+active]][[+inactive]]">
-			<span class="vote plus[[+voted_plus]]" title="[[%ticket_like]]"><i class="glyphicon glyphicon-arrow-up"></i></span>
-			[[+can_vote]][[+cant_vote]]
-			<span class="vote minus[[+voted_minus]]" title="[[%ticket_dislike]]"><i class="glyphicon glyphicon-arrow-down"></i></span>
-		</span>
-	</div>
-</div>
-<!--tickets_can_vote <span class="vote rating" title="[[%ticket_refrain]]"><i class="glyphicon glyphicon-minus"></i></span>-->
+<!--tickets_can_vote <span class="vote rating" title="[[%ticket_refrain]]"><i class="uk-icon-minus"></i></span>-->
 <!--tickets_cant_vote <span class="rating[[+rating_positive]][[+rating_negative]]" title="[[%ticket_rating_total]] [[+rating_total]]: ↑[[+rating_plus]] [[%ticket_rating_and]] ↓[[+rating_minus]]">[[+rating]]</span>-->
 <!--tickets_new_comments <span class="ticket-new-comments">+[[+new_comments]]</span>-->
 <!--tickets_active  active-->
@@ -47,5 +22,5 @@
 <!--tickets_rating_positive  positive-->
 <!--tickets_rating_negative  negative-->
 <!--tickets_can_star  active-->
-<!--tickets_stared <i class="glyphicon glyphicon-star stared star"></i>-->
-<!--tickets_unstared <i class="glyphicon glyphicon-star unstared star"></i>-->
+<!--tickets_stared <i class="uk-icon-star stared star"></i>-->
+<!--tickets_unstared <i class="uk-icon-star unstared star"></i>-->
