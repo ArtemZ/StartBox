@@ -1,14 +1,23 @@
 <nav class="uk-navbar">
-    [[!pdoMenu? 
-    &outerClass=`uk-navbar-nav` 
-    &hereClass=`uk-active` 
-    &lastClass=`0` 
-    &firstClass=`0` 
-    &parentClass=`uk-parent`
-    &level=`2` 
-    &startId=`0` 
-    &tplParentRow=`@INLINE <li[[+classes]] data-uk-dropdown><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
-    &tplParentRowActive=`@INLINE <li[[+classes]] data-uk-dropdown><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
-    &tplInner=`@INLINE <div class="uk-dropdown uk-dropdown-navbar"><ul class="uk-nav uk-nav-navbar">[[+wrapper]]</ul></div>`
-    ]]
+<a href="" class="uk-navbar-brand uk-text-primary"><i class="uk-icon-cloud"></i> [[++site_name]]</a>
+[[pdoMenu? 
+&outerClass=`uk-navbar-nav` 
+&hereClass=`uk-active` 
+&lastClass=`0` 
+&firstClass=`0` 
+&parentClass=`uk-parent`
+&level=`2` 
+&startId=`0` 
+&tplParentRow=`@INLINE <li[[+classes]] data-uk-dropdown><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
+&tplParentRowActive=`@INLINE <li[[+classes]] data-uk-dropdown><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
+&tplInner=`@INLINE <div class="uk-dropdown uk-dropdown-navbar"><ul class="uk-nav uk-nav-navbar">[[+wrapper]]</ul></div>`
+]]
+<div class="uk-navbar-content uk-navbar-flip">
+[[!HybridAuth? &providers=`Yandex,Facebook` &groups=`Users:1`]]
+[[!Personalize? 
+&ph=`name`
+&fullName=`1`
+&yesChunk=`@CODE: Привет, [[+name]]! <span class="uk-text-muted"><i class="uk-icon-sign-out"></i> <a class="uk-link-muted" href="/?hauth_action=logout">Выход</a></span>`
+&noChunk=`@CODE: <i class="uk-icon-user"></i> <a class="uk-link-muted" href="#hauth"  data-uk-modal>Авторизация</a>`]]
+</div>
 </nav>
