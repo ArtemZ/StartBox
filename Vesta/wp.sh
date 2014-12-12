@@ -12,7 +12,7 @@ wp_link="http://ru.wordpress.org/latest-ru_RU.zip"
 wp_path="/home/$user/web/$domain/public_html"
 wp_file="$wp_path/wordpress.zip"
 
-wp_password=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
+wp_password=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 9 | head -n 1)
 wp_database=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
 wp_database_user=$user"_"$wp_database
 cd $home_dir
@@ -22,8 +22,8 @@ mv $wp_path/wordpress/* $wp_path
 rm $wp_file
 rm -rf $wp_path/wordpress/ $wp_path/index.html
 
-chmod -R 777 $wp_path
-
+#chmod -R 777 $wp_path
+chown -R $user:$user /home/$user/web
 $VESTA/bin/v-add-database $user $wp_database $wp_database $wp_password
 
 cp $wp_path/wp-config-sample.php $wp_path/wp-config.php
