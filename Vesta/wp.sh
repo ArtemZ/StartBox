@@ -1,0 +1,30 @@
+#!/bin/bash
+# Adding php wrapper
+user="$1"
+domain="$2"
+ip="$3"
+home_dir="$4"
+docroot="$5"
+
+wp_link="http://ru.wordpress.org/latest-ru_RU.zip"
+wp_path="/home/$user/web/$domain/public_html"
+wp_file="$wp_path/wordpress.zip"
+
+wp_password=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
+wp_database="wp_"$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
+wp_database_user=$user"_wp"
+cd $home_dir
+wget $wp_link -O $wp_file
+unzip $wp_file -d $wp_path
+mv $wp_path/wordpress/* $wp_path
+rm $wp_file
+rm -rf $wp_path/wordpress/ $wp_path/index.html
+
+chmod -R 777 $wp_path
+
+$VESTA/bin/v-add-database $user $wp_database wp $wp_password
+
+cp $wp_path/wp-config-sample.php $wp_path/wp-config.php
+perl -pi -e "s/database_name_here/$user"_"$wp_database/g" $wp_path/wp-config.php
+perl -pi -e "s/username_here/$wp_database_user/g" $wp_path/wp-config.php
+perl -pi -e "s/password_here/$wp_password/g" $wp_path/wp-config.php
