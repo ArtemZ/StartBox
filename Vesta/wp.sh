@@ -1,3 +1,5 @@
+  GNU nano 2.2.6                                      File: /usr/local/vesta/bin/wp.sh
+
 #!/bin/bash
 # Adding php wrapper
 user="$1"
@@ -11,8 +13,8 @@ wp_path="/home/$user/web/$domain/public_html"
 wp_file="$wp_path/wordpress.zip"
 
 wp_password=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
-wp_database="wp_"$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
-wp_database_user=$user"_wp"
+wp_database=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
+wp_database_user=$user"_"$wp_database
 cd $home_dir
 wget $wp_link -O $wp_file
 unzip $wp_file -d $wp_path
@@ -22,7 +24,7 @@ rm -rf $wp_path/wordpress/ $wp_path/index.html
 
 chmod -R 777 $wp_path
 
-$VESTA/bin/v-add-database $user $wp_database wp $wp_password
+$VESTA/bin/v-add-database $user $wp_database $wp_database $wp_password
 
 cp $wp_path/wp-config-sample.php $wp_path/wp-config.php
 perl -pi -e "s/database_name_here/$user"_"$wp_database/g" $wp_path/wp-config.php
