@@ -17,7 +17,7 @@ mv $modx_path/modx-2.3.2-pl/* $modx_path
 rm modx_file
 rm -rf $modx_path/modx-2.3.2-pl/ $modx_path/index.html
 #chmod -R 777 $wp_path
-chown -R $user:$user /home/$user/web
+#chown -R $user:$user /home/$user/web
 $VESTA/bin/v-add-database $user $modx_database $modx_database $modx_password
 
 echo "<modx>
@@ -49,5 +49,6 @@ echo "<modx>
 <remove_setup_directory>1</remove_setup_directory>
 </modx>" > /home/$user/web/$domain/public_html/config.xml
 
-chown -R $user:$user /home/$user/web
+#chown -R $user:$user /home/$user/web
 php /home/$user/web/$domain/public_html/setup/index.php --installmode=new --config=/home/$user/web/$domain/public_html/config.xml
+chown -R $user:$user /home/$user/web
