@@ -39,7 +39,7 @@ echo "<modx>
 <cmsadmin>admin</cmsadmin>
 <cmspassword>admin</cmspassword>
 <cmsadminemail>admin@$domain</cmsadminemail>
-<core_path>/home/$USERNAME/web/$domain/public_html/core/</core_path>
+<core_path>/home/$user/web/$domain/public_html/core/</core_path>
 <context_mgr_path>/home/$user/web/$domain/public_html/manager/</context_mgr_path>
 <context_mgr_url>/manager/</context_mgr_url>
 <context_connectors_path>/home/$user/web/$domain/public_html/connectors/</context_connectors_path>
