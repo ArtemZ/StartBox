@@ -49,6 +49,5 @@ echo "<modx>
 <remove_setup_directory>1</remove_setup_directory>
 </modx>" > /home/$user/web/$domain/public_html/config.xml
 
-#chown -R $user:$user /home/$user/web
 php /home/$user/web/$domain/public_html/setup/index.php --installmode=new --config=/home/$user/web/$domain/public_html/config.xml
 chown -R $user:$user /home/$user/web
