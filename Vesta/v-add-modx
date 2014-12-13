@@ -37,7 +37,7 @@ echo "<modx>
 <unpacked>0</unpacked>
 <language>ru</language>
 <cmsadmin>admin</cmsadmin>
-<cmspassword>Sanes100</cmspassword>
+<cmspassword>admin</cmspassword>
 <cmsadminemail>admin@$domain</cmsadminemail>
 <core_path>/home/$USERNAME/web/$domain/public_html/core/</core_path>
 <context_mgr_path>/home/$user/web/$domain/public_html/manager/</context_mgr_path>
@@ -50,4 +50,4 @@ echo "<modx>
 </modx>" > /home/$user/web/$domain/public_html/config.xml
 
 chown -R $user:$user /home/$user/web
-php /home/$user/web/$domain/public_html/index.php --installmode=new --config=/home/$user/web/$domain/public_html/config.xml
+php /home/$user/web/$domain/public_html/setup/index.php --installmode=new --config=/home/$user/web/$domain/public_html/config.xml
