@@ -1,5 +1,3 @@
-  GNU nano 2.2.6                                      File: /usr/local/vesta/bin/wp.sh
-
 #!/bin/bash
 # Adding php wrapper
 user="$1"
