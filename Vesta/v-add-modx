@@ -14,10 +14,7 @@ cd $home_dir
 wget $modx_link -O $modx_file
 unzip $modx_file -d $modx_path
 mv $modx_path/modx-2.3.2-pl/* $modx_path
-rm modx_file
 rm -rf $modx_path/modx-2.3.2-pl/ $modx_path/index.html
-#chmod -R 777 $wp_path
-#chown -R $user:$user /home/$user/web
 $VESTA/bin/v-add-database $user $modx_database $modx_database $modx_password
 
 echo "<modx>
