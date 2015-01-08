@@ -33,8 +33,8 @@ echo "<modx>
 <inplace>1</inplace>
 <unpacked>0</unpacked>
 <language>ru</language>
-<cmsadmin>admin</cmsadmin>
-<cmspassword>admin</cmspassword>
+<cmsadmin>$user</cmsadmin>
+<cmspassword>$user</cmspassword>
 <cmsadminemail>admin@$domain</cmsadminemail>
 <core_path>/home/$user/web/$domain/public_html/core/</core_path>
 <context_mgr_path>/home/$user/web/$domain/public_html/manager/</context_mgr_path>
