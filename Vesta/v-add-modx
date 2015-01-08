@@ -47,4 +47,4 @@ echo "<modx>
 </modx>" > /home/$user/web/$domain/public_html/config.xml
 
 php /home/$user/web/$domain/public_html/setup/index.php --installmode=new --config=/home/$user/web/$domain/public_html/config.xml
-chown -R $user:$user /home/$user/web
+chown -R $user:$user /home/$user/web/$domain
