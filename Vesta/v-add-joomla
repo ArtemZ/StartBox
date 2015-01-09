@@ -12,17 +12,23 @@ joomla_database=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
 joomla_database_user=$user"_"$joomla_database
 
 cd $home_dir
-
 cp -R /home/admin/joomla3/* $joomla_path
 rm -R $joomla_path/index.html
 chown -R $user:$user /home/$user/web
+
 $VESTA/bin/v-add-database $user $joomla_database $joomla_database $joomla_database_password
+
 sed -i '/user/s/\x27/\x27joomla_user/1' $joomla_path/configuration.php
 sed -i '/db /s/\x27/\x27joomla_database/1' $joomla_path/configuration.php
 sed -i '/password/s/\x27/\x27joomla_password/1' $joomla_path/configuration.php
+
 perl -pi -e "s/joomla_password/$joomla_database_password/g" $joomla_path/configuration.php
 perl -pi -e "s/joomla_user/$joomla_database_user/g" $joomla_path/configuration.php
 perl -pi -e "s/joomla_database/$joomla_database_user/g" $joomla_path/configuration.php
 
+perl -pi -e "s/joomla_log_path/\x2F"home"\x2F$user\x2F"web"\x2F$domain\x2F"public_html"\x2F"logs"/g" $joomla_path/configuration.php
+perl -pi -e "s/joomla_tmp_path/\x2F"home"\x2F$user\x2F"web"\x2F$domain\x2F"public_html"\x2F"tmp"/g" $joomla_path/configuration.php
 mysql "-u"$joomla_database_user "-p"$joomla_database_password --default-character-set=utf8 $joomla_database_user < $joomla_path/joomla.sql
+
 echo $joomla_database_password $joomla_database_user
+
