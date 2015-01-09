@@ -25,6 +25,6 @@ chown -R $user:$user /home/$user/web
 $VESTA/bin/v-add-database $user $wp_database $wp_database $wp_password
 
 cp $wp_path/wp-config-sample.php $wp_path/wp-config.php
-perl -pi -e "s/database_name_here/$user"_"$wp_database/g" $wp_path/wp-config.php
+perl -pi -e "s/database_name_here/$wp_database_user/g" $wp_path/wp-config.php
 perl -pi -e "s/username_here/$wp_database_user/g" $wp_path/wp-config.php
 perl -pi -e "s/password_here/$wp_password/g" $wp_path/wp-config.php
