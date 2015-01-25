@@ -8,7 +8,7 @@ if (false === $result)
    die ('Error database SQL query<br>');
 
 $command="mysql -u$database_user -p$database_password --default-character-set=utf8 $dbase < dump.sql";
-$output = shell_exec($command);
+$importdb = shell_exec($command);
 mysql_close($connect);
 
 ?>
