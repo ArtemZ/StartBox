@@ -15,7 +15,7 @@ define('CRM_PASSWORD', 'password'); // password of a CRM user
 // POST processing
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-	$leadData = $_POST['DATA'];
+	$leadData = $_POST;
 
 	// get lead data from the form
 	$postData = array(
@@ -89,10 +89,10 @@ else
 </head>
 <?=$output;?>
 <form action="rest.php" method="post">
-	Title*: <input type="text" name="DATA[TITLE]" value="" /><br />
-	Company Name: <input type="text" name="DATA[COMPANY_TITLE]" value="" /><br />
-	First Name: <input type="text" name="DATA[NAME]" value="" /><br />
-	Last Name: <input type="text" name="DATA[LAST_NAME]" value="" /><br />
-	Comments: <textarea name="DATA[COMMENTS]"></textarea><br />
+	Title*: <input type="text" name="TITLE" value="" /><br />
+	Company Name: <input type="text" name="COMPANY_TITLE" value="" /><br />
+	First Name: <input type="text" name="NAME" value="" /><br />
+	Last Name: <input type="text" name="LAST_NAME" value="" /><br />
+	Comments: <textarea name="COMMENTS"></textarea><br />
 	<input type="submit" value="Send" />
 </form>
